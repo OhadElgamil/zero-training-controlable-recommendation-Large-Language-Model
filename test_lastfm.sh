@@ -8,7 +8,7 @@ python main.py \
 --prompt_path ./prompt/artist.txt \
 --rec_embed SASRec \
 --llm_tuning lora \
---llm_path xxx \
+--llm_path ../.llama/checkpoints/Llama-2-7b \
 --rec_model_path ./rec_model/lastfm.pt \
 --ckpt_path ./checkpoints/lastfm.ckpt \
 --output_dir ./output/lastfm/ \

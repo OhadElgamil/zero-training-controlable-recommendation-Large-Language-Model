@@ -8,7 +8,7 @@ python main.py \
 --prompt_path ./prompt/game.txt \
 --rec_embed SASRec \
 --llm_tuning lora \
---llm_path xxx \
+--llm_path Llama-2-7b \
 --rec_model_path ./rec_model/steam.pt \
 --ckpt_dir ./checkpoints/steam/ \
 --output_dir ./output/steam/ \

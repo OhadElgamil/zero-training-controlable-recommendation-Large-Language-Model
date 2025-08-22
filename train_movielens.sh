@@ -8,7 +8,7 @@ python main.py \
 --prompt_path ./prompt/movie.txt \
 --rec_embed SASRec \
 --llm_tuning lora \
---llm_path xxx \
+--llm_path meta-llama/Llama-2-7b-hf \
 --rec_model_path ./rec_model/movielens.pt \
 --ckpt_dir ./checkpoints/movielens/ \
 --output_dir ./output/movielens/ \

@@ -1,7 +1,13 @@
 from transformers import AutoTokenizer
 from data.data_interface import DInterface
 
+#this script generates prompts using the same prompt generation LLaRA used for training
+# we will use this prompts in out research
+
 tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-hf")
+
+#this sets the amount of iteration we will do, higher values gives more prompts
+Target_amount = 40
 
 #fix an issue, dont know why but stackoverflow said to do so and it worked...
 if tokenizer.pad_token is None:
@@ -25,5 +31,5 @@ with open("/home/ohad.elgamil/LLaRA/prompt/train_prompts.txt", "w", encoding="ut
         texts = tokenizer.batch_decode(batch["tokens"]["input_ids"], skip_special_tokens=True)
         for t in texts:
             f.write(t.replace("\n", " ") + "\n")
-        if i >= 30: #stop after 20 iterations, can change to whatever
+        if i >= Target_amount: #stop after 20 iterations, can change to whatever
             break 
