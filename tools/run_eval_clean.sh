@@ -1,0 +1,12 @@
+python -m tools.eval_hit1_item \
+  --df_path data/ref/movielens/Test_data.df \
+  --data_dir data/ref/movielens \
+  --llm_path meta-llama/Llama-2-7b-hf \
+  --rec_model_path ./rec_model/movielens.pt \
+  --model_name mlp_projector \
+  --prompt_path ./prompt/movie.txt \
+  --item_id 69 \
+  --cans_num 10 \
+  --ckpt_path ./checkpoints/movielens.ckpt \
+  --clean \
+  --force_include_item

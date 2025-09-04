@@ -5,12 +5,13 @@ import pytorch_lightning as pl
 from torch.utils.data import DataLoader
 from torch.utils.data.sampler import WeightedRandomSampler
 
+
+import json
 import random
 import torch
 import argparse
 from transformers import LlamaForCausalLM, LlamaTokenizer
 import os
-
 
 
 class TrainCollater:
@@ -100,6 +101,7 @@ class TrainCollater:
                        "correct_answer": targets_text,
                        "cans_name": cans_name,
                        }
+    
         return new_batch
 
 class DInterface(pl.LightningDataModule):

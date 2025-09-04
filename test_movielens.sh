@@ -1,14 +1,14 @@
 python main.py \
 --mode test \
---batch_size 8 \
+--batch_size 1 \
 --accumulate_grad_batches 16 \
 --dataset movielens_data \
 --data_dir data/ref/movielens \
 --cans_num 20 \
---prompt_path ./prompt/movie.txt \
+--prompt_path ./log/prompts_test.txt \
 --rec_embed SASRec \
 --llm_tuning lora \
---llm_path meta-llama/Llama-2-7b-hf \
+--llm_path ./llama_patched_item69_beta1 \
 --rec_model_path ./rec_model/movielens.pt \
 --ckpt_path ./checkpoints/movielens.ckpt \
 --output_dir ./output/movielens/ \

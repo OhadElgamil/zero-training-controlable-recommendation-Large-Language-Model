@@ -1,0 +1,11 @@
+python -m tools.compute_layerwise_refusal \
+  --df_path data/ref/movielens/train_data.df \
+  --data_dir data/ref/movielens \
+  --llm_path meta-llama/Llama-2-7b-hf \
+  --rec_model_path ./rec_model/movielens.pt \
+  --model_name mlp_projector \
+  --prompt_path ./prompt/movie.txt \
+  --item_id 69 --cans_num 10 --n_per_group 100 \
+  --ckpt_path ./checkpoints/movielens.ckpt \
+  --llm_tuning freeze_lora \
+  --out_dir ./output

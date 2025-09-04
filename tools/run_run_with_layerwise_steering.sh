@@ -1,0 +1,16 @@
+ python -m tools.run_with_layerwise_steering \
+  --df_path data/ref/movielens/Test_data.df \
+  --data_dir data/ref/movielens \
+  --llm_path meta-llama/Llama-2-7b-hf \
+  --rec_model_path ./rec_model/movielens.pt \
+  --model_name mlp_projector \
+  --prompt_path ./prompt/movie.txt \
+  --ckpt_path ./checkpoints/movielens.ckpt \
+  --llm_tuning freeze_lora \
+  --vec_path ./output/refusal_layerwise_item69.pt \
+  --alpha 0.75 \
+  --position last_token \
+  --item_id 69 \
+  --cans_num 10 \
+  --force_include_item \
+  --batch_size 1
