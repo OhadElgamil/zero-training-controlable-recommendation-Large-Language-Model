@@ -7,19 +7,26 @@ Large language model-based recommendation systems (LLMRec) have shown strong per
 
 ## How to Run (Reproducibility)
 
-```bash
+
 # Step 1 — Obtain the codebase
+
+```bash
 git clone https://github.com/OhadElgamil/zero-training-controlable-recommendation-Large-Language-Model
 cd zero-training-controlable-recommendation-Large-Language-Model
-
+```
 # Step 2 — Create and activate a conda environment (adapt to your local setup)
+```bash
 # conda env create -n <env_name> python=3.10
 # conda activate <env_name>
+```
 
 # Step 3 — Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 # Step 4 — Execute the experimental pipeline (scripts are located under tools/)
+```bash
 # (i) Compute the steering / “refusal” direction used for inference-time control
 bash tools/run_compute_refusal_direction.sh
 
@@ -28,7 +35,7 @@ bash tools/run_eval_clean.sh
 
 # (iii) Evaluate the enhanced (steered) variant
 bash tools/run_eval_enhanced.sh
-
+```
 ## Method (Overview)
 The central premise is that certain latent directions in the embedding space encode semantic/behavioral axes relevant to exposure or recommendation likelihood. By identifying an appropriate direction vector and perturbing target item embeddings along it, we can continuously control recommendation propensity at inference time. :contentReference[oaicite:2]{index=2}
 
