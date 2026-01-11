@@ -107,7 +107,6 @@ Steering direction computed from:
 | Clean (unsteered)  | 0.0755   | 0.5579      |
 | Steered (enhanced) | 0.0443   | 0.5185      |
 
-:contentReference[oaicite:14]{index=14}
 
 **Interpretation.** The experiments show that steering alters model behavior, but the computed direction may not align cleanly with “recommendability” and can reduce Hit@1 depending on how contrast sets are defined. :contentReference[oaicite:15]{index=15}
 
