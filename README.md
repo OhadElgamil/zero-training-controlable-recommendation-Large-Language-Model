@@ -20,15 +20,17 @@ Item embeddings \(v_i \in \mathbb{R}^d\) are extracted from the model’s final 
 ## Direction Identification
 Let \(I^+\) denote a set of “highly recommended / target” items and \(I^-\) a set of “neutral / low-exposure” items. A steering direction is computed via mean-difference:
 
-\[
+$$
 d = \frac{1}{|I^+|}\sum_{i\in I^+} v_i - \frac{1}{|I^-|}\sum_{i\in I^-} v_i
-\]
+$$
+
 
 Then normalize:
 
-\[
+$$
 \tilde{d}=\frac{d}{\|d\|_2}
-\]
+$$
+
 
 Optionally, PCA-based denoising can be applied to isolate the behavioral dimension. :contentReference[oaicite:6]{index=6}
 
@@ -37,9 +39,9 @@ Optionally, PCA-based denoising can be applied to isolate the behavioral dimensi
 ## Directional Steering (Inference-Time Control)
 Given \(\tilde{d}\), we modify a target item embedding via:
 
-\[
+$$
 v'_i = v_i + \alpha \tilde{d}
-\]
+$$
 
 and recompute scores \(s'(u,i)=f_\theta(u,v'_i)\). Positive \(\alpha\) increases a target item’s presence in a higher-exposure region; negative \(\alpha\) suppresses it. :contentReference[oaicite:7]{index=7}
 
